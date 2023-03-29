@@ -2,13 +2,12 @@ package com.learningstuff.kafkaeventspringboot.events;
 
 import com.learningstuff.kafkaeventspringboot.events.annotation_driven.GenericEvent;
 import com.learningstuff.kafkaeventspringboot.events.annotation_driven.GenericStringEvent;
-import com.learningstuff.kafkaeventspringboot.events.dto.Person;
+import com.learningstuff.kafkaeventspringboot.dto.Person;
 import com.learningstuff.kafkaeventspringboot.events.generic.GenericCustomEvent;
 import com.learningstuff.kafkaeventspringboot.events.generic.GenericCustomPersonEvent;
 import com.learningstuff.kafkaeventspringboot.events.generic.GenericCustomStringEvent;
 import lombok.AllArgsConstructor;
 import org.springframework.context.ApplicationEventPublisher;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
@@ -34,11 +33,11 @@ public class SpringEventPublisher {
     }
 
 //    @Scheduled(fixedDelay = 2000)
-//    public void sendCustomEvent() {
-//        publishCustomEvent(
-//                String.format("%s-%s", "Custom Event", LocalDateTime.now())
-//        );
-//    }
+    public void sendCustomEvent() {
+        publishCustomEvent(
+                String.format("%s-%s", "Custom Event", LocalDateTime.now())
+        );
+    }
 
     public void publishGenericEvent(final String message) {
         System.out.println("=================================================================");
@@ -53,8 +52,8 @@ public class SpringEventPublisher {
         applicationEventPublisher.publishEvent(event1);
     }
 
-    @Scheduled(fixedDelay = 2000)
-    public void sendCustomEvent() {
+//    @Scheduled(fixedDelay = 2000)
+    public void sendGenericEvent() {
         publishGenericEvent(
                 String.format("%s-%s", "Generic Event", LocalDateTime.now())
         );
@@ -76,10 +75,10 @@ public class SpringEventPublisher {
     }
 
 //    @Scheduled(fixedDelay = 5000, initialDelay = 5000)
-//    public void sendGenericCustomEvent() {
-//        publishGenericCustomEvent(
-//                String.format("%s-%s", "Generic Custom Event", LocalDateTime.now())
-//        );
-//    }
+    public void sendGenericCustomEvent() {
+        publishGenericCustomEvent(
+                String.format("%s-%s", "Generic Custom Event", LocalDateTime.now())
+        );
+    }
 
 }

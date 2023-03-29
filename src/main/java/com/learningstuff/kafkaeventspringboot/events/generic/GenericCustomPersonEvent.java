@@ -1,6 +1,6 @@
 package com.learningstuff.kafkaeventspringboot.events.generic;
 
-import com.learningstuff.kafkaeventspringboot.events.dto.Person;
+import com.learningstuff.kafkaeventspringboot.dto.Person;
 
 /**
  * Created by IntelliJ IDEA.

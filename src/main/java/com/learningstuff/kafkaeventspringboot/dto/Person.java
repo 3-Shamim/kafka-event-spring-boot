@@ -1,4 +1,4 @@
-package com.learningstuff.kafkaeventspringboot.events.dto;
+package com.learningstuff.kafkaeventspringboot.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
